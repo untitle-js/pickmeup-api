@@ -8,7 +8,7 @@
 
         <!-- Connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://192.168.99.100:5432/pickmeup</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">postgres</property>
         <!-- SQL dialect -->
@@ -18,10 +18,13 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create all database on startup -->
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Annotated entity classes -->
         <mapping class="com.pickmeup.api.model.Users"/>
-        
+        <mapping class="com.pickmeup.api.model.Cars"/>
+        <mapping class="com.pickmeup.api.model.Carpool"/>
+        <mapping class="com.pickmeup.api.model.CarpoolUsers"/>
+
     </session-factory>
 </hibernate-configuration>

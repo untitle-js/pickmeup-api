@@ -1,11 +1,7 @@
 package com.pickmeup.api.model;
 
+import javax.persistence.*;
 import java.sql.Date;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 /**
  * Created by Renz on 11/2/16.
@@ -31,11 +27,11 @@ public class Users implements java.io.Serializable {
         this.lastName = lastName;
     }
 
-    public int getPhoneNum() {
+    public String getPhoneNum() {
         return phoneNum;
     }
 
-    public void setPhoneNum(int phoneNum) {
+    public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
 
@@ -75,11 +71,11 @@ public class Users implements java.io.Serializable {
     @Column(name ="first_name")
     private String firstName;
 
-    @Column(name ="last_dame")
+    @Column(name ="last_name")
     private String lastName;
 
     @Column(name = "phone_number")
-    private int phoneNum;
+    private String phoneNum;
 
     @Column(name="email")
     private String email;
@@ -88,6 +84,7 @@ public class Users implements java.io.Serializable {
     private String address;
 
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="user_id",nullable = false)
     private int userId;
 
